@@ -5,7 +5,7 @@ use warnings;
 use File::Temp qw(tempdir);
 use File::Path;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -64,7 +64,7 @@ sub new {
 sub DESTROY {
     my ($self) = @_;
     if ($self->{tmpdir}) {
-        rmtree($self->{tmpdir}, 0, 1);
+        rmtree($self->{tmpdir}, 0, 0);
     }
 }
 
